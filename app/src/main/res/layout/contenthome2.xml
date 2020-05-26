@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.project.ramf.rams.HomeActivity"
+    tools:showIn="@layout/tab2consult">
+
+    <TextView
+        android:id="@+id/doctor"
+        android:layout_width="154dp"
+        android:layout_height="133dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:gravity="center_horizontal"
+        android:text="Are You a Doctor ?"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/consult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/doctor"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons"
+        android:backgroundTint="@color/colorAccent"
+        android:padding="10dp"
+        android:text="Yes,I want to consult"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/conusultant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/consult"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:background="@drawable/buttons"
+        android:backgroundTint="@color/colorAccent"
+        android:padding="10dp"
+        android:text="No, I need consultancy"
+        android:textColor="#fff" />
+</RelativeLayout>

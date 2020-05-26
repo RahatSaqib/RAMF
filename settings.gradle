@@ -1,0 +1,2 @@
+rootProject.name='Ramfolinee'
+include ':app', ':chat-sdk-firebase-file-storage', ':chat-sdk-firebase-adapter', ':chat-sdk-profile-pictures', ':chat-sdk-ui', ':chat-sdk-firebase-push', ':chat-sdk-firebase-ui', ':chat-sdk-firestore-adapter', ':chat-sdk-micro', ':chat-sdk-core', ':chat-sdk-firebase-social-login'

@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "60858819438",
+    "firebase_url": "https://ramf-online.firebaseio.com",
+    "project_id": "ramf-online",
+    "storage_bucket": "ramf-online.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60858819438:android:dcdbe72607c56cd62d177f",
+        "android_client_info": {
+          "package_name": "com.project.ramfolinee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60858819438-sc75g4k2b8cn78bcjohpmuhkttleounm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.ramfolinee",
+            "certificate_hash": "a6663b0900612d31e751c780d02e1c4988d95a56"
+          }
+        },
+        {
+          "client_id": "60858819438-h7ojmutag8ilh8h5cr116bb3ql243itp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmSNdBBe5TFFlAmenaTZb2cAT6z9qN-f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60858819438-h7ojmutag8ilh8h5cr116bb3ql243itp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-7052071124298836~6138862041"
+    }
+  ],
+  "configuration_version": "1"
+}

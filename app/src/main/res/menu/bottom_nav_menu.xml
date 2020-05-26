@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_recents"
+        android:enabled="true"
+        android:icon="@drawable/baseline_house_white_18dp"
+        android:title="Home"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_favorites"
+        android:enabled="true"
+        android:icon="@drawable/twotone_add_shopping_cart_white_18"
+        android:title="Cart"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_nearby"
+        android:enabled="true"
+        android:icon="@drawable/baseline_supervised_user_circle_white_18dp"
+        android:title="Nearby"
+        app:showAsAction="ifRoom" />
+</menu>

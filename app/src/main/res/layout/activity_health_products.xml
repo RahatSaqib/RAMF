@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.project.ramf.rams.HealthProducts">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="57dp"
+            android:background="#FFFFFF"
+            android:theme="@style/ToolBarStyle"
+            app:layout_collapseMode="pin"
+            app:navigationIcon="?attr/actionModeCloseDrawable"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="125dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center_horizontal"
+            app:srcCompat="@drawable/logoo" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/content_health_products" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:srcCompat="@drawable/books" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

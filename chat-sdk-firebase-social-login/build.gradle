@@ -1,0 +1,44 @@
+apply plugin: 'com.android.library'
+
+buildscript {
+    repositories {
+        google()
+        maven { url "https://jitpack.io" }
+        jcenter()
+    }
+
+    dependencies {
+    }
+}
+
+android {
+
+    compileSdkVersion Integer.parseInt(project.ANDROID_COMPILE_SDK_VERSION)
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(project.MIN_SDK)
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    api project(':chat-sdk-firebase-adapter')
+    api project(':chat-sdk-ui')
+
+    implementation "com.google.android.gms:play-services-auth:$playAuthVersion"
+    implementation "com.facebook.android:facebook-login:$facebookLoginVersion"
+    implementation "com.twitter.sdk.android:twitter:$twitterVersion"
+}
+
+
