@@ -82,7 +82,6 @@ public class BaseInterfaceAdapter implements InterfaceAdapter {
     protected Class threadDetailsActivity = ThreadDetailsActivity.class;
     protected Class threadEditDetailsActivity = ThreadEditDetailsActivity.class;
 
-
     protected Class searchActivity = SearchActivity.class;
     protected Class editProfileActivity = EditProfileActivity.class;
     protected Class profileActivity = ProfileActivity.class;
@@ -280,11 +279,6 @@ public class BaseInterfaceAdapter implements InterfaceAdapter {
     }
 
     @Override
-    public Class getHomeActivity() {
-        return null;
-    }
-
-    @Override
     public void setMainActivity (Class mainActivity) {
         this.mainActivity = mainActivity;
     }
@@ -347,11 +341,6 @@ public class BaseInterfaceAdapter implements InterfaceAdapter {
     @Override
     public void setCreateThreadActivity(Class createThreadActivity) {
         this.createThreadActivity = createThreadActivity;
-    }
-
-    @Override
-    public void setHomeActivity(Class HomeActivity) {
-
     }
 
     @Override
@@ -500,11 +489,6 @@ public class BaseInterfaceAdapter implements InterfaceAdapter {
 
     public void startSearchActivity (Context context) {
         startActivity(context, getSearchActivity());
-    }
-
-    @Override
-    public void startHomeActivity(Context context, HashMap<String, Object> extras) {
-
     }
 
     @Override

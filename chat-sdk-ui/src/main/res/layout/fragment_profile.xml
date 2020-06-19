@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true">
@@ -11,63 +12,77 @@
         android:layout_height="wrap_content"
         android:id="@+id/mainConstraintLayout">
 
-        <com.facebook.drawee.view.SimpleDraweeView
-            android:id="@+id/image_avatar"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_gravity="center"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/icn_100_profile"
+        <RelativeLayout
+            android:id="@+id/account"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C13C2B"
+            android:paddingTop="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            fresco:placeholderImage="@drawable/icn_100_profile"
-            fresco:failureImage="@drawable/icn_100_profile"
-            fresco:roundAsCircle="true"
-            fresco:fadeDuration="0" />
+            android:paddingBottom="50dp">
 
-        <TextView
-            android:id="@+id/text_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:text="TextView"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="17sp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_avatar" />
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:id="@+id/image_avatar"
+                android:layout_width="67dp"
+                android:layout_height="58dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/icn_100_profile"
 
-        <TextView
-            android:id="@+id/text_status"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:text="TextView"
-            android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Caption"
-            android:textSize="17sp"
-            android:textStyle="italic"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_name" />
+                fresco:fadeDuration="0"
+                fresco:failureImage="@drawable/icn_100_profile"
+                fresco:placeholderImage="@drawable/icn_100_profile"
+                fresco:roundAsCircle="true" />
 
-        <ImageView
-            android:id="@+id/ivFlag"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/ivFlag"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp" />
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="89dp"
+                android:layout_toRightOf="@id/image_avatar"
+                android:background="#EDE9E9"
+                android:padding="10dp"
+                android:text="Login/Sign Up"
+                tools:visibility="gone" />
+
+            <TextView
+                android:id="@+id/text_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_name"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toRightOf="@id/image_avatar"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textColor="#F1B1B1"
+                android:textSize="17sp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/text_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_toRightOf="@id/image_avatar"
+                android:text="TextView"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp" />
+        </RelativeLayout>
 
         <ImageView
             android:id="@+id/ivLocation"
@@ -76,7 +91,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginTop="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_status"
+            app:layout_constraintTop_toBottomOf="@+id/account"
             app:layout_goneMarginTop="0dp"
             app:srcCompat="@drawable/icn_36_location" />
 
@@ -98,7 +113,7 @@
             android:layout_marginTop="9dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ivPhone"
-            app:srcCompat="@drawable/icn_36_email" />
+            app:srcCompat="@drawable/baseline_email_black_18dp" />
 
         <TextView
             android:id="@+id/tvEmail"
@@ -131,14 +146,14 @@
             android:layout_width="0dp"
             android:layout_height="25dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
             android:text="TextView"
             android:textSize="17sp"
-            app:layout_goneMarginTop="0dp"
             app:layout_constraintLeft_toRightOf="@+id/ivLocation"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_status" />
+            app:layout_constraintTop_toBottomOf="@+id/account"
+            app:layout_goneMarginTop="0dp" />
 
         <TextView
             android:id="@+id/tvFollows"

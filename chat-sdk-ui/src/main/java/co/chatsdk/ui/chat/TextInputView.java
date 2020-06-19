@@ -7,6 +7,7 @@
 
 package co.chatsdk.ui.chat;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -73,6 +74,7 @@ public class TextInputView extends LinearLayout implements TextView.OnEditorActi
     }
 
     public void setDelegate (TextInputDelegate delegate) {
+
         this.delegate = new WeakReference<>(delegate);
     }
 
@@ -177,6 +179,7 @@ public class TextInputView extends LinearLayout implements TextView.OnEditorActi
 
     }
 
+    @SuppressLint("StringFormatInvalid")
     public void startRecording (View view) {
 
         audioMaxLengthReached = false;

@@ -81,7 +81,6 @@ public class ChatSDK {
 
     public static ChatSDK initialize (Context context, Configuration config, @NotNull Class<? extends BaseNetworkAdapter> networkAdapterClass, @NotNull Class<? extends InterfaceAdapter> interfaceAdapterClass) throws Exception {
         shared().setContext(context);
-
         shared().config = config;
 
         shared().setNetworkAdapter(networkAdapterClass.getConstructor().newInstance());
@@ -104,8 +103,8 @@ public class ChatSDK {
         if (config().debug) {
             Timber.plant(new Timber.DebugTree());
         }
+      
         return shared();
-
     }
 
     public void activateModule (String moduleName, String methodName, MethodArgument... arguments) throws ChatSDKException {

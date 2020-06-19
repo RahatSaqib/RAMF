@@ -96,19 +96,19 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         btnResetPassword = findViewById(R.id.button_reset_password);
 
         btnResetPassword.setVisibility(ChatSDK.config().resetPasswordEnabled ? View.VISIBLE : View.INVISIBLE);
-
-        if(!ChatSDK.auth().accountTypeEnabled(AccountDetails.Type.Facebook)) {
-            ((ViewGroup) btnFacebook.getParent()).removeView(btnFacebook);
-        }
-        if(!ChatSDK.auth().accountTypeEnabled(AccountDetails.Type.Twitter)) {
-            ((ViewGroup) btnTwitter.getParent()).removeView(btnTwitter);
-        }
-        if(!ChatSDK.auth().accountTypeEnabled(AccountDetails.Type.Google)) {
-            ((ViewGroup) btnGoogle.getParent()).removeView(btnGoogle);
-        }
-        if(!ChatSDK.auth().accountTypeEnabled(AccountDetails.Type.Anonymous)) {
-            ((ViewGroup) btnAnonymous.getParent()).removeView(btnAnonymous);
-        }
+//
+//        if(!ChatSDK.auth().accountTypeEnabled(AccountDetails.Type.Facebook)) {
+//            ((ViewGroup) btnFacebook.getParent()).removeView(btnFacebook);
+//        }
+//        if(!ChatSDK.auth().accountTypeEnabled(AccountDetails.Type.Twitter)) {
+//            ((ViewGroup) btnTwitter.getParent()).removeView(btnTwitter);
+//        }
+//        if(!ChatSDK.auth().accountTypeEnabled(AccountDetails.Type.Google)) {
+//            ((ViewGroup) btnGoogle.getParent()).removeView(btnGoogle);
+//        }
+//        if(!ChatSDK.auth().accountTypeEnabled(AccountDetails.Type.Anonymous)) {
+//            ((ViewGroup) btnAnonymous.getParent()).removeView(btnAnonymous);
+//        }
 
         // Set the debug username and password details for testing
         if(!StringChecker.isNullOrEmpty(ChatSDK.config().debugUsername)) {
@@ -118,7 +118,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             passwordEditText.setText(ChatSDK.config().debugPassword);
         }
 
-        appIconImage.setImageResource(co.chatsdk.core.R.drawable.ic_launcher_big);
+        appIconImage.setImageResource(ChatSDK.config().logoDrawableResourceID);
 
     }
 
@@ -210,7 +210,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void afterLogin() {
         // We pass the extras in case this activity was launched by a push. In that case
         // we can load up the thread the text belongs to
-//        ChatSDK.ui().startMainActivity(this, extras);
+        ChatSDK.ui().startMainActivity(this, extras);
         finish();
     }
 

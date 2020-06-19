@@ -41,7 +41,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(':chat-sdk-firebase-adapter')
-    implementation "com.google.firebase:firebase-storage:$firebaseStorageVersion"
+    implementation "com.google.firebase:firebase-storage:19.1.1"
 }
 
 ext {

@@ -13,11 +13,10 @@ import android.os.Bundle;
 import android.os.Handler;
 import androidx.annotation.LayoutRes;
 import androidx.annotation.NonNull;
-
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.appcompat.app.ActionBar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -243,7 +242,7 @@ public class ChatActivity extends BaseActivity implements TextInputDelegate, Cha
                     if (status == MessageSendStatus.Uploading || status == MessageSendStatus.Sent) {
                         reloadDataForMessage(progress.message);
                     }
-        }));
+                }));
 
     }
 
@@ -371,7 +370,7 @@ public class ChatActivity extends BaseActivity implements TextInputDelegate, Cha
                     // Open the text action sheet
                     hideKeyboard();
                     return messageActionHandler.open(messageActions, ChatActivity.this);
-        }).subscribe(this::showSnackbar, snackbarOnErrorConsumer()));
+                }).subscribe(this::showSnackbar, snackbarOnErrorConsumer()));
     }
 
     public Completable loadMoreMessages (boolean loadFromServer, boolean saveScrollPosition, boolean notify) {
@@ -877,10 +876,10 @@ public class ChatActivity extends BaseActivity implements TextInputDelegate, Cha
     public void showOptions() {
         // We don't want to remove the user if we load another activity
         // Like the sticker activity
-       removeUserFromChatOnExit = false;
+        removeUserFromChatOnExit = false;
 
-       optionsHandler = ChatSDK.ui().getChatOptionsHandler(this);
-       optionsHandler.show(this);
+        optionsHandler = ChatSDK.ui().getChatOptionsHandler(this);
+        optionsHandler.show(this);
     }
 
     @Override

@@ -32,7 +32,6 @@ public interface InterfaceAdapter {
 
     Class getLoginActivity();
     Class getMainActivity();
-    Class getHomeActivity();
     Class getChatActivity();
     Class getThreadDetailsActivity();
     Class getThreadEditDetailsActivity();
@@ -55,7 +54,6 @@ public interface InterfaceAdapter {
     void setForwardMessageActivity (Class forwardMessageActivity);
     void setAddUsersToThreadActivity(Class addUsersToThreadActivity);
     void setCreateThreadActivity(Class createThreadActivity);
-    void setHomeActivity(Class HomeActivity);
 
     void setSearchActivity (Class searchActivity);
     void setEditProfileActivity (Class editProfileActivity);
@@ -106,7 +104,6 @@ public interface InterfaceAdapter {
     void startMainActivity (Context context);
     void startMainActivity (Context context, HashMap<String, Object> extras);
     void startSearchActivity (Context context);
-    void startHomeActivity(Context context, HashMap<String, Object> extras);
     void startForwardMessageActivityForResult(Activity activity, Message message, int code);
 
     void startAddUsersToThreadActivity(Context context);

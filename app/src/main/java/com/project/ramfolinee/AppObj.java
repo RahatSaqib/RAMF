@@ -24,6 +24,7 @@ import co.chatsdk.firebase.FirebaseNetworkAdapter;
 import co.chatsdk.firebase.FirebasePaths;
 import co.chatsdk.firebase.file_storage.FirebaseFileStorageModule;
 import co.chatsdk.firebase.push.FirebasePushModule;
+import co.chatsdk.firebase.social_login.FirebaseSocialLoginModule;
 import co.chatsdk.firestore.FirestoreNetworkAdapter;
 import co.chatsdk.profile.pictures.ProfilePicturesModule;
 import co.chatsdk.ui.manager.BaseInterfaceAdapter;
@@ -40,7 +41,7 @@ import io.reactivex.functions.Action;
 /**
  * Created by itzik on 6/8/2014.
  */
-public class AppObj extends Application {
+public class AppObj extends MultiDexApplication {
 
     @Override
     public void onCreate() {
@@ -67,6 +68,8 @@ public class AppObj extends Application {
             builder.pushNotificationSound("default");
             builder.pushNotificationsForPublicChatRoomsEnabled(false);
             ProfilePicturesModule.activate();
+            FirebaseSocialLoginModule.activate(getApplicationContext());
+            builder.googleLogin("60858819438-h7ojmutag8ilh8h5cr116bb3ql243itp.apps.googleusercontent.com");
 
             // Activate any other modules you need.
             // ...

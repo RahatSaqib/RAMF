@@ -68,7 +68,8 @@
     <co.chatsdk.ui.chat.TextInputView
         android:id="@+id/view_message_text_input"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/TextLabel">
     </co.chatsdk.ui.chat.TextInputView>
 
 </LinearLayout>

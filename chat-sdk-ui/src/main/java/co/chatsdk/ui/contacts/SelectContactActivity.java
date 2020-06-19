@@ -9,6 +9,7 @@ package co.chatsdk.ui.contacts;
 
 import android.os.Bundle;
 import androidx.annotation.LayoutRes;
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,6 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,9 +34,12 @@ import co.chatsdk.core.events.NetworkEvent;
 import co.chatsdk.core.session.ChatSDK;
 import co.chatsdk.core.utils.DisposableList;
 import co.chatsdk.core.utils.UserListItemConverter;
+import co.chatsdk.firebase.FirebasePaths;
+import co.chatsdk.firebase.wrappers.UserWrapper;
 import co.chatsdk.ui.R;
 import co.chatsdk.ui.chat.ChatActivity;
 import co.chatsdk.ui.main.BaseActivity;
+import io.reactivex.Single;
 import io.reactivex.functions.Predicate;
 
 /**
@@ -144,6 +152,29 @@ public abstract class SelectContactActivity extends BaseActivity {
 
     protected void loadData () {
         adapter.setUsers(new ArrayList<>(ChatSDK.contact().contacts()), true);
+    }
+    public static Single<List<User>> getAllRegisteredUsers() {
+        return Single.create(emitter -> {
+            DatabaseReference ref = FirebasePaths.usersRef();
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    List<User> users = new ArrayList<>();
+                    if (dataSnapshot.exists()) {
+                        for (DataSnapshot child : dataSnapshot.getChildren()) {
+                            UserWrapper uw = new UserWrapper(child);
+                            users.add(uw.getModel());
+                        }
+                    }
+                    emitter.onSuccess(users);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    emitter.onError(databaseError.toException());
+                }
+            });
+        });
     }
 
     @Override

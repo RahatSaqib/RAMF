@@ -18,6 +18,7 @@
 
 
     <application
+        android:name=".AppObj"
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
@@ -26,247 +27,30 @@
         android:roundIcon="@mipmap/ic_launcher_2"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".AppObj">
+        >
 
         <meta-data android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id"
             tools:replace="android:value"/>
         <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_api_key"/>
 
-        <activity android:name="com.facebook.FacebookActivity"
-            android:configChanges=
-                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name" />
         <activity
-            android:name="com.facebook.CustomTabActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-            </intent-filter>
-        </activity>
-
-
-
-        <activity android:name=".Register"></activity>
-        <activity android:name=".OTPActivity" />
-        <activity
-            android:name=".AddNewproductpage"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".AboutUs"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <meta-data
-            android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7052071124298836~6138862041" />
-
-        <receiver
-            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
-            android:exported="true"
-            android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-            </intent-filter>
-        </receiver>
-
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_channel_id"
-            android:value="@string/default_notification_channel_id" />
-
-        <activity
-            android:name=".FullscreenActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_fullscreen"
-            android:theme="@style/FullscreenTheme" />
-
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_launcher_background" />
-        <!--
- Set color used with incoming notification messages. This is used when no color is set for the incoming
-             notification message. See README(https://goo.gl/6BKBk7) for more.
-        -->
-        <meta-data
-            android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/colorAccent" />
-
-        <activity android:name=".docUpdate" />
-        <activity android:name=".DoctorSearch" />
-        <activity android:name=".DoctorRegister" />
-
-        <service
-            android:name=".FirebaseMessagingServicee"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service> <!-- <service android:name=".Notification.FirebaseService" -->
-        <!-- android:enabled="true" -->
-        <!-- android:exported="true"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="com.google.firebase.INSTANCE_ID_SERVICE"/> -->
-        <!-- </intent-filter> -->
-        <!-- </service> -->
-        <activity
-            android:name=".MainActivitydoc1"
-            android:label="Doctor"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".AllMedicine"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".categories"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".HealthProducts"
-            android:label="@string/title_activity_health_products"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SettingsActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ProfileActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".LoginActivitydoc"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ChatsFragment"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ChatActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".CartActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".AdminLogin"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".StartActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".RegisterActivitydoc"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".StatusActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".UsersActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ConfirmFinalOrderActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ProductDetailsActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ResetPasswordActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SearchProductsActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".SettinsActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".HomeActivity"
-            android:label="Home Activity"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Admin.AdminCategoryActivity"
-            android:label="Admin Category"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Admin.AdminAddNewProductActivity"
-            android:label="Add Product"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Admin.addNewSanitizers"
-            android:label="Add Product"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Admin.AdminMaintainProductsActivity"
-            android:label="Maintain"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Admin.AdminNewOrdersActivity"
-            android:label="Orders"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Admin.AdminUserProductsActivity"
-            android:label="User Product"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Model.AdminOrders"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Model.Cart"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Model.Products"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Model.Users"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".MainActivitydoc"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".Doctorslog"
-            android:label="Log in"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
-<!--        <activity-->
-<!--            android:name=".SplashActivity"-->
-<!--            android:theme="@style/SplashScreen">-->
-<!--            <intent-filter>-->
-<!--                <action android:name="android.intent.action.MAIN" />-->
-
-<!--                <category android:name="android.intent.category.LAUNCHER" />-->
-<!--            </intent-filter>-->
-<!--        </activity>-->
-        <activity android:name="co.chatsdk.ui.login.SplashScreenActivity">
+            android:name=".SplashActivity"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity android:name="co.chatsdk.ui.login.SplashScreenActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
 
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>

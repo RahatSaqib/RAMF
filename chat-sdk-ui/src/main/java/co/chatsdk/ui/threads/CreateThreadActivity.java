@@ -6,6 +6,12 @@ import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,6 +28,16 @@ public class CreateThreadActivity extends SelectContactActivity {
 
     protected String threadEntityID = "";
     protected Thread thread;
+    private RecyclerView mFriendsList;
+
+    private DatabaseReference mFriendsDatabase;
+    private Query mUsersDatabase;
+
+    private FirebaseAuth mAuth;
+
+    private String mCurrent_user_id;
+
+    private View mMainView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

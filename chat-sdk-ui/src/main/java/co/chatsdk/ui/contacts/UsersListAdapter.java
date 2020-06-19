@@ -7,6 +7,7 @@
 
 package co.chatsdk.ui.contacts;
 
+import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import android.util.SparseBooleanArray;
 import android.view.LayoutInflater;
@@ -17,16 +18,24 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import co.chatsdk.core.dao.User;
 import co.chatsdk.core.interfaces.UserListItem;
+import co.chatsdk.firebase.FirebasePaths;
+import co.chatsdk.firebase.wrappers.UserWrapper;
 import co.chatsdk.ui.R;
 import co.chatsdk.ui.utils.AvailabilityHelper;
 import io.reactivex.Observable;
+import io.reactivex.Single;
 import io.reactivex.subjects.PublishSubject;
 import timber.log.Timber;
 
@@ -101,6 +110,7 @@ public class UsersListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
         }
 
         setUsers(users);
+        getAllRegisteredUsers();
 
         this.multiSelectEnabled = multiSelect;
     }
@@ -175,6 +185,30 @@ public class UsersListAdapter extends RecyclerView.Adapter<RecyclerView.ViewHold
             return true;
         });
 
+    }
+    public static Single<List<User>> getAllRegisteredUsers() {
+        return Single.create(emitter -> {
+            DatabaseReference ref = FirebasePaths.usersRef();
+            ref.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    List<User> users = new ArrayList<>();
+                    if (dataSnapshot.exists()) {
+
+                        for (DataSnapshot child : dataSnapshot.getChildren()) {
+                            UserWrapper uw = new UserWrapper(child);
+                            users.add(uw.getModel());
+                        }
+                    }
+                    emitter.onSuccess(users);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    emitter.onError(databaseError.toException());
+                }
+            });
+        });
     }
 
     public Object getItem(int i) {

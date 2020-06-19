@@ -30,7 +30,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.textfield.TextInputEditText;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -85,7 +84,7 @@ public class BaseActivity extends AppCompatActivity {
      * @return the bitmap that will be used for the screen overview also called the recents apps.
      **/
     protected Bitmap getTaskDescriptionBitmap(){
-        return BitmapFactory.decodeResource(getResources(), co.chatsdk.core.R.drawable.ic_launcher_big);
+        return BitmapFactory.decodeResource(getResources(), ChatSDK.config().logoDrawableResourceID);
     }
 
     protected int getTaskDescriptionColor(){
@@ -160,7 +159,6 @@ public class BaseActivity extends AppCompatActivity {
      * Set up the ui so every view and nested view that is not EditText will listen to touch event and dismiss the keyboard if touched.
      * http://stackoverflow.com/questions/4165414/how-to-hide-soft-keyboard-on-android-after-clicking-outside-edittext
      * */
-    @SuppressLint("ClickableViewAccessibility")
     public void setupTouchUIToDismissKeyboard(View view) {
         setupTouchUIToDismissKeyboard(view, (v, event) -> {
             hideKeyboard();
@@ -173,16 +171,16 @@ public class BaseActivity extends AppCompatActivity {
         if (exceptIDs != null)
             ids = Arrays.asList(exceptIDs);
 
-//        Set up touch listener for non-text box views to hide keyboard.
-//        if(!(view instanceof TextInputEditText)) {
-//
-//            if (!ids.isEmpty() && ids.contains(view.getId()))
-//            {
-//                return;
-//            }
-//
-//            view.setOnTouchListener(onTouchListener);
-//        }
+        //Set up touch listener for non-text box views to hide keyboard.
+        if(!(view instanceof EditText)) {
+
+            if (!ids.isEmpty() && ids.contains(view.getId()))
+            {
+                return;
+            }
+
+            view.setOnTouchListener(onTouchListener);
+        }
 
         //If a layout container, iterate over children and seed recursion.
         if (view instanceof ViewGroup) {
@@ -211,6 +209,7 @@ public class BaseActivity extends AppCompatActivity {
         showSnackbar(this.getString(textResourceId));
     }
 
+    @SuppressLint("WrongConstant")
     protected void showSnackbar (String text) {
         if (!text.isEmpty()) {
             Snackbar.make(findViewById(android.R.id.content), text, Snackbar.LENGTH_SHORT).show();
@@ -279,7 +278,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void hideKeyboard() {
-        hideKeyboard(this);
+        BaseActivity.hideKeyboard(this);
     }
 
     public static void hideKeyboard(Activity activity) {

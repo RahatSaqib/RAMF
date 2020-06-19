@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.project.ramf.rams.SearchProductsActivity">
+
+    <RelativeLayout
+        android:id="@+id/r5"
+        android:layout_width="360dp"
+        android:layout_height="53dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimaryDark">
+
+        <com.rey.material.widget.EditText
+            android:id="@+id/search_product_name"
+            android:layout_width="254dp"
+            android:layout_height="40dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="17dp"
+            android:background="@drawable/border1"
+            android:hint="Search Products"
+            android:padding="9dp"
+            android:textColorHint="@color/texthint"
+            android:textSize="18dp"
+            android:inputType="textCapWords"/>
+
+        <Button
+            android:id="@+id/search_btn"
+            android:layout_width="38dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="7dp"
+            android:layout_toRightOf="@+id/search_product_name"
+            android:background="@drawable/baseline_search_black_18dp"
+            android:backgroundTint="@color/textbox"
+            android:padding="9dp"
+            android:textColor="@color/textbox"
+            android:textSize="16dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/r5"
+        android:scrollbars="horizontal"></androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

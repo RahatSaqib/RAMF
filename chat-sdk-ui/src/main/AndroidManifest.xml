@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="co.chatsdk.ui">
 
     <!--For capturing photos in profile and chat UI-->
     <uses-feature android:name="android.hardware.camera" android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -30,6 +33,223 @@
             android:exported="false"
             android:grantUriPermissions="true" />
 
+        <meta-data android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id"
+            tools:replace="android:value"/>
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="@string/google_maps_api_key"/>
+
+        <activity android:name="com.facebook.FacebookActivity"
+            android:configChanges=
+                "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:label="@string/app_name" />
+        <activity
+            android:name="com.facebook.CustomTabActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="@string/fb_login_protocol_scheme" />
+            </intent-filter>
+        </activity>
+
+
+
+        <activity android:name="co.chatsdk.ui.Register"></activity>
+        <activity
+            android:name="co.chatsdk.ui.AddNewproductpage"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.AboutUs"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-7052071124298836~6138862041" />
+
+        <receiver
+            android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="@string/default_notification_channel_id" />
+
+        <activity
+            android:name="co.chatsdk.ui.FullscreenActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/FullscreenTheme" />
+
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_launcher_background" />
+        <!--
+ Set color used with incoming notification messages. This is used when no color is set for the incoming
+             notification message. See README(https://goo.gl/6BKBk7) for more.
+        -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/colorAccent" />
+
+        <activity android:name="co.chatsdk.ui.docUpdate" />
+        <activity android:name="co.chatsdk.ui.DoctorSearch" />
+        <activity android:name="co.chatsdk.ui.DoctorRegister" />
+
+        <service
+            android:name="co.chatsdk.ui.FirebaseMessagingServicee"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- <service android:name=".Notification.FirebaseService" -->
+        <!-- android:enabled="true" -->
+        <!-- android:exported="true"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="com.google.firebase.INSTANCE_ID_SERVICE"/> -->
+        <!-- </intent-filter> -->
+        <!-- </service> -->
+        <activity
+            android:name="co.chatsdk.ui.MainActivitydoc1"
+            android:label="Doctor"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.AllMedicine"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.categories"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.HealthProducts"
+            android:label="@string/title_activity_health_products"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.SettingsActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+<!--        <activity-->
+<!--            android:name=".ProfileActivity"-->
+<!--            android:label="Log in"-->
+<!--            android:theme="@style/AppTheme.NoActionBar" />-->
+        <activity
+            android:name="co.chatsdk.ui.LoginActivitydoc"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="co.chatsdk.ui.CartActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.AdminLogin"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.StartActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.RegisterActivitydoc"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.StatusActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.UsersActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.ConfirmFinalOrderActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.ProductDetailsActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.ResetPasswordActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.SearchProductsActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.SettinsActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.HomeActivity"
+            android:label="Home Activity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.Admin.AdminCategoryActivity"
+            android:label="Admin Category"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.Admin.AdminAddNewProductActivity"
+            android:label="Add Product"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.Admin.addNewSanitizers"
+            android:label="Add Product"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.Admin.AdminMaintainProductsActivity"
+            android:label="Maintain"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.Admin.AdminNewOrdersActivity"
+            android:label="Orders"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.Admin.AdminUserProductsActivity"
+            android:label="User Product"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+
+        <activity
+            android:name="co.chatsdk.ui.MainActivity"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="co.chatsdk.ui.MainActivitydoc"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="co.chatsdk.ui.Doctorslog"
+            android:label="Log in"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+
+        <!--        <activity android:name="co.chatsdk.ui.login.SplashScreenActivity">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+
+
+
+
         <activity android:name=".login.LoginActivity"
             android:screenOrientation="portrait"
             android:launchMode = "singleTask"
@@ -42,6 +262,7 @@
             android:theme="@style/SdkTheme">
         </activity>
 
+
         <activity android:name=".threads.ThreadDetailsActivity"
             android:windowSoftInputMode="stateHidden"
             android:theme="@style/ChatSDKSlidingTransactionTheme"/>
@@ -51,8 +272,7 @@
             android:theme="@style/ChatSDKSlidingTransactionTheme"/>
 
         <activity android:name=".chat.ChatActivity"
-            android:parentActivityName=".main.MainAppBarActivity"
-            android:launchMode = "singleTop"
+
             android:windowSoftInputMode="stateHidden|adjustResize"
             android:theme="@style/ChatSDKSlidingTransactionTheme">
 
@@ -98,8 +318,7 @@
             android:theme="@style/ChatSDKSlidingTransactionTheme"/>
 
         <!--Crop image-->
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat" />
+
 
         <!-- Google Maps Metadata-->
         <meta-data

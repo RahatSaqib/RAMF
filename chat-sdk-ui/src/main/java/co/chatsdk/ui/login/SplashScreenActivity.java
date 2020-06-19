@@ -1,5 +1,6 @@
 package co.chatsdk.ui.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -9,6 +10,7 @@ import androidx.annotation.LayoutRes;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import co.chatsdk.core.session.ChatSDK;
 import co.chatsdk.ui.R;
+import co.chatsdk.ui.RegisterActivitydoc;
 import co.chatsdk.ui.main.BaseActivity;
 
 public class SplashScreenActivity extends BaseActivity {
@@ -65,7 +67,9 @@ public class SplashScreenActivity extends BaseActivity {
     }
 
     protected void startLoginActivity () {
-        startActivityForResult(ChatSDK.ui().getLoginIntent(this, extras), AUTH);
+        Intent intent =new Intent(this, RegisterActivitydoc.class);
+        startActivity(intent);
+        finish();
     }
 
     protected void startProgressBar () {

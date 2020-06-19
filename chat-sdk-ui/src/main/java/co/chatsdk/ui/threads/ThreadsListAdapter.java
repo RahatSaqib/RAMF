@@ -7,6 +7,7 @@
 
 package co.chatsdk.ui.threads;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -52,6 +53,7 @@ public class ThreadsListAdapter extends RecyclerView.Adapter<ThreadViewHolder> {
         return new ThreadViewHolder(row);
     }
 
+    @SuppressLint("StringFormatInvalid")
     @Override
     public void onBindViewHolder(final ThreadViewHolder holder, int position) {
 

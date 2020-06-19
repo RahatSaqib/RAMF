@@ -7,7 +7,6 @@
 
 package co.chatsdk.ui.main;
 
-import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import androidx.fragment.app.DialogFragment;
@@ -44,7 +43,6 @@ public abstract class BaseFragment extends DialogFragment {
         super.onResume();
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     public void setupTouchUIToDismissKeyboard(View view, final Integer... exceptIDs) {
         BaseActivity.setupTouchUIToDismissKeyboard(view, (v, event) -> {
             hideKeyboard();

@@ -9,10 +9,28 @@ package co.chatsdk.ui.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import co.chatsdk.core.dao.Keys;
+import co.chatsdk.core.dao.User;
 import co.chatsdk.core.events.EventType;
 import co.chatsdk.core.events.NetworkEvent;
 import co.chatsdk.core.session.ChatSDK;
+import co.chatsdk.core.types.ConnectionType;
+import co.chatsdk.firebase.FirebasePaths;
+import co.chatsdk.firebase.wrappers.UserWrapper;
+import co.chatsdk.ui.HomeActivity;
+import io.reactivex.Single;
 
 
 public abstract class MainActivity extends BaseActivity {
@@ -27,10 +45,41 @@ public abstract class MainActivity extends BaseActivity {
             finish();
             return;
         }
-
         initViews();
         launchFromPush(getIntent().getExtras());
+        getAllRegisteredUsers().subscribe(users -> {
+            for (User user: users) {
+                ChatSDK.contact().addContactLocal(user, ConnectionType.Contact);
+            }
+        });
+
+
     }
+    public static Single<List<User>> getAllRegisteredUsers() {
+        return Single.create(emitter -> {
+            DatabaseReference ref = FirebasePaths.usersRef();
+            Query zone=ref.orderByChild("type").equalTo("Doctor");
+            zone.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    List<User> users = new ArrayList<>();
+                    if (dataSnapshot.exists()) {
+                        for (DataSnapshot child : dataSnapshot.getChildren()) {
+                            UserWrapper uw = new UserWrapper(child);
+                            users.add(uw.getModel());
+                        }
+                    }
+                    emitter.onSuccess(users);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                    emitter.onError(databaseError.toException());
+                }
+            });
+        });
+    }
+
 
     public void launchFromPush (Bundle bundle) {
         if (bundle != null) {
@@ -78,6 +127,8 @@ public abstract class MainActivity extends BaseActivity {
 
     @Override
     public void onBackPressed() {
-        // Fixes an issue where if we press back the whole app goes blank
+        Intent intent = new Intent(MainActivity.this, HomeActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

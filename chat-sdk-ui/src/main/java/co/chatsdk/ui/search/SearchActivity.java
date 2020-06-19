@@ -211,7 +211,7 @@ public class SearchActivity extends BaseActivity {
 
         for (UserListItem u : adapter.getSelectedUsers()) {
             if (u instanceof User && !((User) u).isMe()) {
-                completables.add(ChatSDK.contact().addContact((User) u, ConnectionType.Contact));
+               completables.add(ChatSDK.contact().addContact((User) u, ConnectionType.Contact));
             }
         }
 

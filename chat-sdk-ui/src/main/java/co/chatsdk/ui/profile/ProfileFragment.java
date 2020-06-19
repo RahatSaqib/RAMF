@@ -61,6 +61,7 @@ public class ProfileFragment extends BaseFragment {
     protected ImageView locationImageView;
     protected ImageView phoneImageView;
     protected ImageView emailImageView;
+    protected Button login;
 
     protected User user;
 

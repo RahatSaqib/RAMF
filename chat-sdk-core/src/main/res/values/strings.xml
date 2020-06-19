@@ -36,7 +36,7 @@
     <string name="add_conversation">Add Conversation</string>
     <string name="creating_thread">Creating Thread</string>
 
-    <string name="new_chat" translatable="false">New Chat</string>
+    <string name="new_chat">New Chat</string>
 
     <string name="send_mail">Send Mail</string>
     <string name="there_are_no_email_clients_installed">Send Mail</string>
