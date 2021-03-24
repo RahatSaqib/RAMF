@@ -1,0 +1,13 @@
+R_DEF: Internal format may change without notice
+local
+id gridLayout
+id imageView
+id root
+layout activity_profile_pictures
+string action_add_picture
+string action_delete_picture
+string app_name
+string deleting_picture
+string set_as_default
+string updating_pictures
+string uploading_picture

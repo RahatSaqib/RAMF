@@ -1,0 +1,177 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
+apply plugin: 'com.jakewharton.butterknife'
+
+
+buildscript {
+    repositories {
+        google()
+        maven { url "https://jitpack.io" }
+        jcenter()
+    }
+
+    dependencies {
+    }
+}
+
+android {
+
+    compileSdkVersion Integer.parseInt(project.ANDROID_COMPILE_SDK_VERSION)
+
+    defaultConfig {
+        multiDexEnabled=true
+        minSdkVersion Integer.parseInt(project.MIN_SDK)
+        targetSdkVersion Integer.parseInt(project.ANDROID_BUILD_TARGET_SDK_VERSION)
+    }
+
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-fresco.pro'
+        }
+        debug {
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+        checkReleaseBuilds false
+        lintConfig file('lint.xml')
+    }
+}
+
+ext {
+    libraryName = 'CoreUI'
+    artifact = 'ui'
+    libraryDescription = 'Core UI'
+}
+
+publish {
+    userOrg = BINTRAY_USER_ORG
+    groupId = CHAT_SDK_GROUP
+    artifactId = artifact
+    repoName = BINTRAY_REPO
+    publishVersion = CHAT_SDK_VERSION
+    desc = libraryDescription
+    licences = ["GPL-3.0"]
+    uploadName = libraryName
+    website = GIT_URL
+}
+
+rootProject.allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+        maven { url "http://dl.bintray.com/chat-sdk/chatkit" }
+        maven { url "http://dl.bintray.com/chat-sdk/matisse"}
+    }
+}
+
+dependencies {
+//    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(path:':chat-sdk-core')
+
+    implementation "org.ocpsoft.prettytime:prettytime:$rootProject.ext.prettyTimeVersion"
+    implementation "com.theartofdev.edmodo:android-image-cropper:$rootProject.ext.imageCropperVersion"
+    implementation "com.github.chrisbanes:PhotoView:$rootProject.ext.photoViewVersion"
+//    implementation "com.squareup.okhttp3:okhttp:$okHttpVersion"
+    implementation "com.jakewharton:butterknife:$butterKnifeVersion"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+    implementation "com.jakewharton.rxrelay2:rxrelay:$rxRelayVersion"
+
+    // Dependencies required by other Chat SDK libraries
+    api "androidx.constraintlayout:constraintlayout:$androidxConstraintLayoutVersion"
+    api "com.google.android.material:material:$materialVersion"
+
+    api "com.github.siyamed:android-shape-imageview:$shapeImageViewVersion"
+    api "co.chatsdk.chatsdk:chatkit:$chatKit"
+
+    implementation "com.mikepenz:google-material-typeface:$iconicsGoogleMaterialIconsVersion"
+    implementation "com.mikepenz:fontawesome-typeface:$iconicsFontAwesomeTypefaceVersion"
+
+    implementation "com.mikepenz:iconics-core:$iconicsVersion"
+    implementation "com.mikepenz:iconics-views:$iconicsVersion"
+
+    implementation "de.hdodenhof:circleimageview:$circleImageViewVersion"
+
+    implementation "co.chatsdk:matisse:$matisseVersion"
+
+
+
+    implementation "com.miguelcatalan:materialsearchview:$materialSearchVersion"
+
+    implementation "com.jaredrummler:material-spinner:$materialSpinnerVersion"
+
+    implementation "net.yslibrary.keyboardvisibilityevent:keyboardvisibilityevent:$keyboardVisibilityEventVersion"
+
+    // Audio
+    implementation "com.github.adrielcafe:AndroidAudioRecorder:$androidAudioRecorderVersion"
+
+    api "com.github.bumptech.glide:glide:$glideVersion"
+    implementation project(path: ':chat-sdk-firebase-adapter')
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+
+
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.firebase:firebase-analytics:17.4.2'
+
+    implementation 'com.firebaseui:firebase-ui-auth:6.2.0'
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'com.google.firebase:firebase-ads:19.1.0'
+
+    testImplementation 'junit:junit:4.13'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.google.firebase:firebase-core:17.4.3'
+
+
+    implementation 'com.google.android.gms:play-services-ads:19.1.0'
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'
+    implementation 'com.youth.banner:banner:1.4.9'
+    implementation 'com.jaeger.statusbarutil:library:1.4.0'
+
+
+    implementation 'com.firebaseui:firebase-ui-database:3.2.2'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.rey5137:material:1.2.5'
+
+    implementation 'io.paperdb:paperdb:2.6'
+
+
+
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
+    implementation 'com.google.firebase:firebase-firestore:21.4.3'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+
+    implementation 'com.squareup.okhttp:okhttp:2.7.5'
+    implementation 'com.squareup.okhttp:okhttp-urlconnection:2.7.5'
+    implementation 'com.google.firebase:firebase-messaging:20.2.1'
+
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+
+    implementation "com.google.android.libraries.places:places:2.3.0"
+    implementation "org.ocpsoft.prettytime:prettytime:4.0.5.Final"
+
+  
+    implementation 'com.facebook.android:facebook-login:5.15.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+
+    // Dependencies required by other Chat SDK libraries
+
+
+    implementation 'com.google.firebase:firebase-database:19.3.1'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'com.google.firebase:firebase-auth:19.3.1'
+    implementation 'com.google.firebase:firebase-core:17.4.3'
+
+}
+

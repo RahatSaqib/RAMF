@@ -1,0 +1,35 @@
+-- Merging decision tree log ---
+manifest
+ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:1:1-9:12
+INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:1:1-9:12
+	package
+		ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:2:5-40
+		INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+		INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:1:11-69
+application
+ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:4:5-7:19
+	android:label
+		ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:4:18-50
+activity#sdk.chat.profile.pictures.ProfilePicturesActivity
+ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:5:9-6:52
+	android:screenOrientation
+		ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:6:13-49
+	android:name
+		ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml:5:19-58
+uses-sdk
+INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+		ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+		INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+		ADDED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
+		INJECTED from F:\works\5.0.2\Ramfolinee\chat-sdk-mod-profile-pictures\src\main\AndroidManifest.xml
