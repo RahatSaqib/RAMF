@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="false"
+    android:layout_centerVertical="false"
+    tools:context="sdk.chat.ui.Admin.AdminAddNewProductActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/select_product_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:cropToPadding="false"
+            android:src="@drawable/select_product_image" />
+
+        <EditText
+            android:id="@+id/product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/select_product_image"
+
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="45dp"
+            android:background="@drawable/border1"
+            android:hint="Product Name..."
+            android:inputType="textMultiLine"
+            android:padding="20dp" />
+
+        <EditText
+            android:id="@+id/product_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="45dp"
+            android:background="@drawable/border1"
+            android:hint="Product Description..."
+            android:inputType="textMultiLine"
+
+            android:padding="20dp" />
+
+        <EditText
+            android:id="@+id/product_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_description"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="45dp"
+            android:background="@drawable/border1"
+            android:hint="Product Price..."
+            android:inputType="textMultiLine"
+            android:padding="20dp" />
+
+        <Spinner
+            android:id="@+id/subcategory"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@id/product_price"
+
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:dropDownWidth="match_parent" />
+
+        <Spinner
+            android:id="@+id/medicine"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_below="@id/subcategory"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:dropDownWidth="match_parent" />
+
+        <Button
+            android:id="@+id/add_new_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/medicine"
+            android:layout_marginLeft="45dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="45dp"
+            android:background="@drawable/butoonshape"
+            android:backgroundTint="@color/colorAccent"
+            android:padding="17dp"
+            android:text="Add Product"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+
+</ScrollView>

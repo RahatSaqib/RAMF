@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AllMedicine">
+
+
+
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/search_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/r6"
+        android:layout_width="317dp"
+        android:layout_height="182dp"
+        android:layout_below="@id/search_product_name"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:id="@+id/l4"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/l3"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/Y"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Y"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/Z"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Z"
+                android:textColor="#fff" />
+
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/seacrchind"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="Search By Indexing." />
+
+        <LinearLayout
+            android:id="@+id/l1"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/seacrchind"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/A"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="A"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/B"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="B"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/C"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="C"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/D"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="D"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/E"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="E"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/F"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="F"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/G"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="G"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/H"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="H"
+                android:textColor="#fff" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l2"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/l1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/I"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="I"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/J"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="J"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/K"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="K"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/L"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="L"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/M"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="M"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/N"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="N"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/O"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="O"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/P"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="P"
+                android:textColor="#fff" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l3"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_below="@id/l2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/Q"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="Q"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/Re"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="R"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/S"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="S"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/T"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="T"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/U"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="U"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/V"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="V"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/W"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="W"
+                android:textColor="#fff" />
+
+            <Button
+                android:id="@+id/X"
+                android:layout_width="30dp"
+                android:layout_height="32dp"
+                android:layout_below="@id/seacrchind"
+                android:layout_margin="5dp"
+                android:background="@drawable/border1"
+                android:backgroundTint="@color/colorAccent"
+                android:text="X"
+                android:textColor="#fff" />
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/r6"></androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

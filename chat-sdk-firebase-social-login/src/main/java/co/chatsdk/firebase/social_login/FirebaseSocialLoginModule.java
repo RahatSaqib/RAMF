@@ -2,7 +2,8 @@ package co.chatsdk.firebase.social_login;
 
 import android.content.Context;
 
-import co.chatsdk.core.session.ChatSDK;
+import sdk.chat.core.session.ChatSDK;
+
 
 /**
  * Created by ben on 9/5/17.

@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">Chat SDK Firebase Social Login</string>
+    <string name="app_name" translatable="false">RAMF Online</string>
+    <string name="facebook_app_id" translatable="false">255331039044064</string>
+    <string name="fb_login_protocol_scheme" translatable="false">fb255331039044064</string>
+    <string name="default_notification_channel_id" translatable="false"> fcm_default_channel</string>
+    <string name="google_maps_api_key" translatable="false">AIzaSyCwwtZrlY9Rl8paM0R6iDNBEit_iexQ1aE</string>
+    <string name="google_web_client_id" translatable="false">1088435112418-e3t77t8jl2ucs8efeqs72o696in8soui.apps.googleusercontent.com</string>
 
     <!--Api-Keys-->
     <!--Facebook-->
-    <!--<string name="facebook_id">966932090008976</string>-->
+    <string name="facebook_id" translatable="false">255331039044064</string>
 
     <!--Google Maps-->
     <!--<string name="google_maps_api_key">AIzaSyDhk2BmGnhRY5YunvYWCEs0r-aq4X32TO8</string>-->

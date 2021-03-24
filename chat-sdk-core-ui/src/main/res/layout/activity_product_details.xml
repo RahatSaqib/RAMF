@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:gravity="center"
+    tools:context=".ProductDetailsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/product_image_details"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"></ImageView>
+
+
+        <TextView
+            android:id="@+id/product_name_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_image_details"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Product Name"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/Details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/number_btn"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="For Tablet &amp; Capsule ,You need to order 10 pieces or more"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/product_price_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_description_details"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Product Price"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/product_description_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_name_details"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:text="Product Description"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/pd_add_to_cart_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/Details"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/butoonshape"
+            android:backgroundTint="@color/quantum_orange"
+            android:text="Add to Cart"
+            android:textColor="@android:color/white"
+            android:textSize="18dp" />
+
+        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+            android:id="@+id/number_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/product_price_details"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:elevation="6dp"
+            app:finalNumber="100"
+            app:initialNumber="10"
+            app:textColor="@color/textbox"
+            app:textSize="16dp"
+            app:theme="@style/Elegentnumber">
+
+        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
+    </RelativeLayout>
+
+
+</ScrollView>

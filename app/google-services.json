@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "60858819438-doria4fmmde2f1oos9cnovqeccc4sqqu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.ramfolinee",
+            "certificate_hash": "5e57ab2642b5c77fc34570c15f78b449ec93c843"
+          }
+        },
+        {
           "client_id": "60858819438-sc75g4k2b8cn78bcjohpmuhkttleounm.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
@@ -43,6 +51,43 @@
         }
       },
       "admob_app_id": "ca-app-pub-7052071124298836~6138862041"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:60858819438:android:1d2fa68817e74e802d177f",
+        "android_client_info": {
+          "package_name": "com.project.ramfonlinee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "60858819438-d6v2kpvpv15ml651aqf8f4hm4tro950c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.project.ramfonlinee",
+            "certificate_hash": "5e57ab2642b5c77fc34570c15f78b449ec93c843"
+          }
+        },
+        {
+          "client_id": "60858819438-h7ojmutag8ilh8h5cr116bb3ql243itp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmSNdBBe5TFFlAmenaTZb2cAT6z9qN-f0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "60858819438-h7ojmutag8ilh8h5cr116bb3ql243itp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

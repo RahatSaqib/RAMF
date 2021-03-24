@@ -17,18 +17,43 @@
       <option name="url" value="https://repo.maven.apache.org/maven2/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="BintrayJCenter" />
-      <option name="name" value="BintrayJCenter" />
+      <option name="id" value="maven2" />
+      <option name="name" value="maven2" />
+      <option name="url" value="http://dl.bintray.com/chat-sdk/chat-sdk-android" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="BintrayJCenter2" />
+      <option name="name" value="BintrayJCenter2" />
       <option name="url" value="https://jcenter.bintray.com/" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="maven" />
-      <option name="name" value="maven" />
+      <option name="id" value="maven7" />
+      <option name="name" value="maven7" />
+      <option name="url" value="http://dl.bintray.com/chat-sdk/chatkit" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven4" />
+      <option name="name" value="maven4" />
+      <option name="url" value="http://dl.bintray.com/chat-sdk/dexter" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven6" />
+      <option name="name" value="maven6" />
       <option name="url" value="https://jitpack.io" />
     </remote-repository>
     <remote-repository>
-      <option name="id" value="Google" />
-      <option name="name" value="Google" />
+      <option name="id" value="maven5" />
+      <option name="name" value="maven5" />
+      <option name="url" value="https://dl.bintray.com/mikepenz/maven" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="maven8" />
+      <option name="name" value="maven8" />
+      <option name="url" value="http://dl.bintray.com/chat-sdk/matisse" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="Google2" />
+      <option name="name" value="Google2" />
       <option name="url" value="https://dl.google.com/dl/android/maven2/" />
     </remote-repository>
   </component>

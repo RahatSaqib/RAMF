@@ -22,23 +22,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.auth.TwitterAuthProvider;
-import com.twitter.sdk.android.core.Callback;
-import com.twitter.sdk.android.core.Result;
-import com.twitter.sdk.android.core.Twitter;
-import com.twitter.sdk.android.core.TwitterAuthConfig;
-import com.twitter.sdk.android.core.TwitterConfig;
-import com.twitter.sdk.android.core.TwitterException;
-import com.twitter.sdk.android.core.TwitterSession;
-import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
-import co.chatsdk.core.handlers.SocialLoginHandler;
-import co.chatsdk.core.session.ChatSDK;
-import co.chatsdk.core.types.AccountDetails;
-import co.chatsdk.firebase.FirebaseAuthenticationHandler;
-import co.chatsdk.firebase.FirebaseCoreHandler;
+
 import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.SingleOnSubscribe;
+import sdk.chat.core.handlers.SocialLoginHandler;
+import sdk.chat.core.session.ChatSDK;
+import sdk.chat.core.types.AccountDetails;
+import sdk.chat.firebase.adapter.FirebaseAuthenticationHandler;
+import sdk.chat.firebase.adapter.FirebaseCoreHandler;
 
 /**
  * Created by ben on 9/4/17.
@@ -51,11 +44,11 @@ public class FirebaseSocialLoginHandler implements SocialLoginHandler {
 
     // Google
     private GoogleSignInOptions gso;
-    private GoogleSignInClient googleClient;
+    private GoogleApiClient googleClient;
     private GoogleSignInCompleteListener googleSignInCompleteListener;
 
     // Twitter
-    TwitterLoginButton twitterButton;
+
 
     private static int RC_GOOGLE_SIGN_IN = 200;
 
@@ -63,15 +56,11 @@ public class FirebaseSocialLoginHandler implements SocialLoginHandler {
 
 
             gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                    .requestIdToken(ChatSDK.config().googleWebClientKey)
+                    .requestIdToken("60858819438-h7ojmutag8ilh8h5cr116bb3ql243itp.apps.googleusercontent.com")
                     .requestEmail()
                     .build();
 
-        if(accountTypeEnabled(AccountDetails.Type.Twitter)) {
-            TwitterAuthConfig authConfig = new TwitterAuthConfig(ChatSDK.config().twitterKey, ChatSDK.config().twitterSecret);
-            TwitterConfig config = new TwitterConfig.Builder(context).twitterAuthConfig(authConfig).build();
-            Twitter.initialize(config);
-        }
+
     }
 
     interface GoogleSignInCompleteListener {
@@ -107,34 +96,17 @@ public class FirebaseSocialLoginHandler implements SocialLoginHandler {
         }).flatMapCompletable(authCredential -> signInWithCredential(activity, authCredential));
     }
 
-    @Override
-    public Completable loginWithTwitter(final Activity activity) {
-        return Single.create((SingleOnSubscribe<AuthCredential>) e -> {
 
-            twitterButton = new TwitterLoginButton(activity);
-            twitterButton.setCallback(new Callback<TwitterSession>() {
-                @Override
-                public void success(Result<TwitterSession> result) {
-                    e.onSuccess(TwitterAuthProvider.getCredential(result.data.getAuthToken().token, result.data.getAuthToken().secret));
-                }
-
-                @Override
-                public void failure(TwitterException exception) {
-                    e.onError(exception);
-                }
-            });
-            twitterButton.callOnClick();
-
-        }).flatMapCompletable(authCredential -> signInWithCredential(activity, authCredential));
-    }
 
     @Override
     public Completable loginWithGoogle(final Activity activity) {
         return Single.create((SingleOnSubscribe<AuthCredential>) e -> {
 
-            googleClient =GoogleSignIn.getClient(activity, gso);
+            googleClient = new GoogleApiClient.Builder(activity)
+                    .addApi(Auth.GOOGLE_SIGN_IN_API, gso)
+                    .build();
 
-            Intent signInIntent = googleClient.getSignInIntent();
+            Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleClient);
             activity.startActivityForResult(signInIntent, RC_GOOGLE_SIGN_IN);
 
             googleSignInCompleteListener = result -> {
@@ -163,9 +135,7 @@ public class FirebaseSocialLoginHandler implements SocialLoginHandler {
             }
         }
 
-        if(twitterButton != null) {
-            twitterButton.onActivityResult(requestCode, resultCode, data);
-        }
+
 
     }
 
@@ -174,8 +144,6 @@ public class FirebaseSocialLoginHandler implements SocialLoginHandler {
         switch (type) {
             case Facebook:
                 return ChatSDK.config().facebookLoginEnabled();
-            case Twitter:
-                return ChatSDK.config().twitterLoginEnabled();
             case Google:
                 return ChatSDK.config().googleLoginEnabled();
             default:

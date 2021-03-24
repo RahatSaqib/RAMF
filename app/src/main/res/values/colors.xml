@@ -1,21 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#fff</color>
-    <color name="colorPrimaryDark">#fff</color>
-    <color name="colorAccent">#20AF1B</color>
-    <color name="splash">#fff</color>
-    <color name="textbox">#2E2B2B</color>
-    <color name="texthint">#756F6F</color>
-    <color name="tool">#000</color>
-    <color name="red">#DA1414</color>
+  <color name="colorPrimary">#fff</color>
+  <color name="colorPrimaryDark">#fff</color>
+  <color name="colorAccent">@color/accent</color>
+  <color name="splash">#fff</color>
+  <color name="textbox">#2E2B2B</color>
+  <color name="texthint">#756F6F</color>
+  <color name="tool">#000</color>
+  <color name="red">#DA1414</color>
 
-    <color name="elegent" >#B11C4F</color>
+  <color name="elegent" >#B11C4F</color>
 
-    <!--    <color name="colorPrimary">#673bb7</color>-->
-    <!--    <color name="colorPrimaryDark">#512da7</color>-->
-    <!--    <color name="colorAccent">#ff5521</color>-->
-    <color name="darkColor">#222222</color>
+  <!--    <color name="colorPrimary">#673bb7</color>-->
+  <!--    <color name="colorPrimaryDark">#512da7</color>-->
+  <!--    <color name="colorAccent">#ff5521</color>-->
+  <color name="darkColor">#222222</color>
 
-    <color name="black_overlay">#66000000</color>
-    <color name="transparent">#222222</color>
+  <color name="black_overlay">#66000000</color>
 </resources>

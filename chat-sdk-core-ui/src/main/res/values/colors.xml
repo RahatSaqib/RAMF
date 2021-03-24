@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#fff</color>
+    <color name="colorPrimaryDark">#fff</color>
+    <color name="colorAccent">@color/accent</color>
+    <color name="splash">#fff</color>
+    <color name="textbox">#2E2B2B</color>
+    <color name="texthint">#756F6F</color>
+    <color name="tool">#000</color>
+
+
+    <color name="elegent" >#B11C4F</color>
+
+    <!--    <color name="colorPrimary">#673bb7</color>-->
+    <!--    <color name="colorPrimaryDark">#512da7</color>-->
+    <!--    <color name="colorAccent">#ff5521</color>-->
+    <color name="darkColor">#222222</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="transparent">#222222</color>
+    <color name="account">#B84725</color>
+    <color name="main_color">#2987e9</color>
+    <color name="login_btn_text_hint">#4CFFFFFF</color>
+    <color name="colorLineItem">#F2F4F6</color>
+
+    <color name="guide_gray">#A8A8A8</color>
+    <color name="light_blue_color">#2987e9</color>
+    <color name="alpha_80_black">#CC000000</color>
+    <color name="bg_color">#EDEDED</color>
+    <color name="home_searchbox_bg">#b1b8bb</color>
+    <color name="search_hint_text_color">#737373</color>
+    <color name="input_hint_color">#C3C2C2</color>
+    <color name="text_main_color">#333333</color>
+    <color name="text_gray_color">#656565</color>
+</resources>

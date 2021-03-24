@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="dark_text">#5F5F5F</color>
+    <color name="button_delete">#CC1515</color>
+    <color name="button_success">#78b737</color>
+    <color name="message_input_border">#E7E7E7</color>
+
+    <color name="primary">#30C8DF</color>
+    <color name="primary_dark">#30C8DF</color>
+    <color name="accent">#30C8DF</color>
+    <color name="text_primary">@android:color/white</color>
+    <color name="window_background">@android:color/background_light</color>
+
+    <color name="login_button_color">#1c93db</color>
+    <color name="register_button_color">#78b737</color>
+    <color name="anonymous_button_color">#aaaaaa</color>
+    <color name="reset_password_button_color">#ffffff</color>
+    <color name="logout_button_color">#ae2020</color>
+
+
+</resources>

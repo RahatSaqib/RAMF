@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SearchProductsActivity">
+
+    <RelativeLayout
+        android:id="@+id/r5"
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/primary">
+
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/search_product_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+
+<!--        <Button-->
+<!--            android:id="@+id/search_btn"-->
+<!--            android:layout_width="38dp"-->
+<!--            android:layout_height="37dp"-->
+<!--            android:layout_alignParentTop="true"-->
+<!--            android:layout_centerHorizontal="true"-->
+<!--            android:layout_marginLeft="4dp"-->
+<!--            android:layout_marginTop="7dp"-->
+<!--            android:layout_toRightOf="@+id/search_product_name"-->
+<!--            android:background="@drawable/baseline_search_black_18dp"-->
+<!--            android:backgroundTint="@color/textbox"-->
+<!--            android:padding="9dp"-->
+<!--            android:textColor="@color/textbox"-->
+<!--            android:textSize="16dp"-->
+<!--            android:textStyle="bold" />-->
+
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/search_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/r5"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:foregroundGravity="center"
+        android:scrollbars="horizontal"></androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

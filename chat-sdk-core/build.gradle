@@ -30,46 +30,21 @@ android {
     }
     lintOptions {
         abortOnError false
+//        checkReleaseBuilds false
+        lintConfig file('lint.xml')
     }
-
 }
 
 greendao {
-    schemaVersion 10
+    schemaVersion 15
     targetGenDir "src/main/java"
-    daoPackage "co.chatsdk.core.dao"
-}
-
-dependencies {
-
-    implementation fileTree(include: ['*.jar'], dir: 'libs')
-
-    implementation group: 'org.joda', name: 'joda-convert', version: '2.2.1'
-    implementation "com.google.code.gson:gson:2.8.6"
-    implementation "com.google.android.gms:play-services-maps:$playMapsVersion"
-    implementation "com.google.android.gms:play-services-location:$playLocationVersion"
-    implementation "androidx.recyclerview:recyclerview:1.1.0"
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
-    implementation "net.zetetic:android-database-sqlcipher:4.4.0@aar"
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
-
-    // Dependencies that are also used by other Chat SDK libraries
-    api "org.greenrobot:greendao:3.3.0"
-    api "joda-time:joda-time:2.10.6"
-    api "com.jakewharton.timber:timber:$timberVersion"
-    api "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
-    api "io.reactivex.rxjava2:rxjava:2.2.19"
-    api "org.apache.commons:commons-lang3:3.10"
-    api "com.facebook.fresco:fresco:2.0.0"
-    api "id.zelory:compressor:$compressorVersion"
-
+    daoPackage "sdk.chat.core.dao"
 }
 
 ext {
-    libraryName = 'ChatSDKCore'
-    artifact = 'chat-sdk-core'
-    libraryDescription = 'Chat SDK Core'
+    libraryName = 'Core'
+    artifact = 'core'
+    libraryDescription = 'Core'
 }
 
 publish {
@@ -83,3 +58,44 @@ publish {
     uploadName = libraryName
     website = GIT_URL
 }
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url "http://dl.bintray.com/chat-sdk/dexter" }
+        maven { url "https://dl.bintray.com/mikepenz/maven" }
+    }
+}
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':sdk-guru-common')
+
+
+    api "androidx.recyclerview:recyclerview:$androidxRecyclerViewVersion"
+    api "androidx.lifecycle:lifecycle-extensions:$androidxLifecycleExtensionsVersion"
+
+    // Needed to surpress error with GreenDao
+    implementation "net.zetetic:android-database-sqlcipher:$androidDatabaseSQLCipher"
+
+    // Dependencies that are also used by other Chat SDK libraries
+    api "org.greenrobot:greendao:$greenDaoVersion"
+
+
+    api "id.zelory:compressor:$compressorVersion"
+
+
+    implementation "com.karumi:dexter:$dexterVersion"
+
+    // Audio
+    implementation "com.google.android.exoplayer:exoplayer:$exoplayerVersion"
+
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glideVersion"
+
+}
+
+

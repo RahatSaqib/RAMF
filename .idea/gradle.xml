@@ -7,20 +7,27 @@
         <option name="testRunner" value="PLATFORM" />
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleJvm" value="1.8" />
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/app-demo" />
+            <option value="$PROJECT_DIR$/chat-sdk-app-firebase" />
             <option value="$PROJECT_DIR$/chat-sdk-core" />
+            <option value="$PROJECT_DIR$/chat-sdk-core-ui" />
             <option value="$PROJECT_DIR$/chat-sdk-firebase-adapter" />
-            <option value="$PROJECT_DIR$/chat-sdk-firebase-file-storage" />
             <option value="$PROJECT_DIR$/chat-sdk-firebase-push" />
             <option value="$PROJECT_DIR$/chat-sdk-firebase-social-login" />
-            <option value="$PROJECT_DIR$/chat-sdk-firebase-ui" />
-            <option value="$PROJECT_DIR$/chat-sdk-firestore-adapter" />
-            <option value="$PROJECT_DIR$/chat-sdk-micro" />
-            <option value="$PROJECT_DIR$/chat-sdk-profile-pictures" />
-            <option value="$PROJECT_DIR$/chat-sdk-ui" />
+            <option value="$PROJECT_DIR$/chat-sdk-firebase-upload" />
+            <option value="$PROJECT_DIR$/chat-sdk-mod-auto" />
+            <option value="$PROJECT_DIR$/chat-sdk-mod-firebase-ui" />
+            <option value="$PROJECT_DIR$/chat-sdk-mod-message-location" />
+            <option value="$PROJECT_DIR$/chat-sdk-mod-profile-pictures" />
+            <option value="$PROJECT_DIR$/chat-sdk-mod-ui-extras" />
+            <option value="$PROJECT_DIR$/sdk-guru-common" />
+            <option value="$PROJECT_DIR$/sdk-guru-firestore" />
+            <option value="$PROJECT_DIR$/sdk-guru-realtime" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
